@@ -1,0 +1,190 @@
+:root{
+    --map-menu-object-width: 50px;
+    --map-menu-object-height: 50px;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, minmax(20px, 1fr));
+    grid-template-rows: 50px auto auto 20px 40px;
+    grid-template-areas: 
+        "sblt sblt h h h h h h h h h h"
+        "sblt sblt c c c c c c c c c c"
+        "sblb sblb c c c c c c c c c c"
+        "sblb sblb c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+        overflow: hidden;
+}
+
+.header {
+    grid-area: h;
+}
+
+.side-bar-left-top {
+    border: 1px solid black;
+    grid-area: sblt;
+}
+
+.side-bar-left-bottom {
+    border: 1px solid black;
+    grid-area: sblb;
+}
+
+.side-bar-right {
+    grid-area: sbr;
+}
+
+.content {
+    border: 1px solid black;
+    overflow: auto;
+    position: relative;
+    
+    grid-area: c;    
+}
+
+
+.status-bar {
+    grid-area: sb;
+}
+
+
+.footer {
+    grid-area: f;
+}
+ 
+/* #mapObjectsMenu li {
+    display:inline;
+} */
+ 
+
+ 
+
+.side-bar-left-top li {
+    list-style: none;
+    display: inline-block
+    /* height: var(--map-menu-object-height);
+    width: var(--map-menu-object-width); */
+}
+
+#page1 {
+    position: absolute;
+    background-color: aliceblue;
+    width: 95%; 
+    height: 95%;
+    margin: 20px;
+    border: 1px solid gray;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.30);
+   
+}
+
+#backgroundImage {
+    position: absolute;
+    margin:10px;    
+    max-height:95%;
+    
+    
+}
+
+#mapElement {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: chocolate;
+    z-index:5;
+}
+
+#details_dialog_overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#detailsDialog {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    position:absolute;
+    top: 200px;
+    left: 500px;
+    display: inline-block;
+    width:500px;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.30);
+    background-color: #fff;
+}
+
+#detailsDialog p{
+    padding: 10px;
+    padding-left: 20px;
+    margin:0;    
+    background-color: rgb(247, 247, 247);
+    border-bottom: 1px solid rgb(226, 226, 226);;
+    font-size: small;
+}
+
+#detailsDialogBody{
+    padding:20px;
+}
+
+#detailsDialogBody select{    
+    width:auto;
+    min-width: 85%;
+}
+
+#detailsDialogBody textarea{    
+    width:auto;
+    min-width: 85%;
+}
+
+#detailsDialogBody hr{    
+    
+    border-color: rgb(240, 239, 239);
+}
+
+#equipment_pictures{
+    width:95%;
+    height:100px;
+    box-shadow: 2px 5px 5px rgba(0,0,0,0.30);
+    border: 1px solid rgb(226, 226, 226);
+}
+
+#equipment_pictures ul{
+    list-style-type: none;
+    
+}
+
+#equipment_pictures li{
+    display:inline;
+    width:20%;
+    height:95%;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.30);
+    border: 1px solid rgb(226, 226, 226);
+}
+
+#canvas_drawing {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+}
+
+
+/* 
+.cameraIcon {
+    position:relative;
+    transform-origin: top left;
+    position: absolute;   
+    cursor: move;
+} */
